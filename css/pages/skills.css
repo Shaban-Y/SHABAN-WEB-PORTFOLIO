@@ -1,0 +1,134 @@
+/* skills page layout */
+.skills-page { padding: 0 0 96px; }
+
+.skills-intro {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 560px;
+  margin-bottom: 56px;
+}
+
+/* two-column category layout */
+.skills-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.skill-category-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--magenta);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-category-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* individual skill row */
+.skill-item {
+  margin-bottom: 18px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.skill-name {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skill-pct {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+}
+
+/* the neon bar track */
+.bar-track {
+  height: 3px;
+  background: var(--raised);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 1px;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  box-shadow: 0 0 8px rgba(0,255,255,0.4);
+  transition: width 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+/* moving shimmer along the bar */
+.bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: -2px; bottom: -2px;
+  width: 12px;
+  background: rgba(255,255,255,0.5);
+  filter: blur(3px);
+  border-radius: 50%;
+}
+
+/* soft skills section at bottom */
+.soft-skills {
+  margin-top: 56px;
+}
+
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.soft-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 18px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.soft-card:hover {
+  border-color: var(--border-hot);
+  background: var(--raised);
+}
+
+.soft-icon {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.soft-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .skills-categories { grid-template-columns: 1fr; }
+}

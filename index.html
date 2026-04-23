@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shaban Yussuf — CS Undergraduate & Frontend Developer, Nairobi Kenya." />
+  <title>Shaban Yussuf</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/pages/index.css" />
+</head>
+<body>
+
+  <!-- nav and cursor -->
+  <script src="js/nav.js"></script>
+
+  <div class="page-wrap">
+    <section class="hero">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- left: text content -->
+          <div class="hero-content reveal">
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              Available For Opportunities
+            </div>
+
+            <h1 class="hero-name" data-text="SHABAN YUSSUF">SHABAN YUSSUF</h1>
+
+            <p class="hero-role">
+              &gt; <span id="typing-text"></span><span class="typing-cursor"></span>
+            </p>
+
+            <p class="hero-bio">
+              CS undergraduate at Thika Technical Training Institute. I build interfaces and automation
+              tools — frontend by craft, backend when needed. Based in Nairobi.
+            </p>
+
+            <div class="hero-actions">
+              <a href="https://drive.google.com/file/d/11q0LZEMeJ1ndX-zQt7J6n-Pa6hXd0PHG/view?usp=sharing"
+                 target="_blank" class="btn-neo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                <span>Download CV</span>
+              </a>
+              <a href="projects.html" class="btn-ghost">
+                <span>View Projects</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <div class="stat-num">2+</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div>
+                <div class="stat-num">'23</div>
+                <div class="stat-label">Started</div>
+              </div>
+              <div>
+                <div class="stat-num">2</div>
+                <div class="stat-label">Certs</div>
+              </div>
+              <div>
+                <div class="stat-num">2</div>
+                <div class="stat-label">Languages</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right: profile card with quick links -->
+          <div class="hero-profile-card reveal">
+            <div class="profile-photo-wrap">
+              <div class="profile-photo-ring"></div>
+              <div class="profile-photo">
+                <!-- swap this div for <img src="assets/profile.jpg" alt="Shaban"> once you have a photo -->
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Photo</span>
+              </div>
+            </div>
+
+            <div class="profile-name">SHABAN YUSSUF</div>
+
+            <div class="profile-badges">
+              <div class="profile-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                </svg>
+                Nairobi, Kenya
+              </div>
+              <div class="profile-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91"/>
+                </svg>
+                +254 797 639 282
+              </div>
+              <div class="profile-badge">
+                ☪️ &nbsp;Muslim — Islam guides my work
+              </div>
+            </div>
+
+            <!-- quick links to all other pages -->
+            <div class="profile-nav">
+              <a href="about.html"         class="profile-nav-link">About</a>
+              <a href="skills.html"        class="profile-nav-link">Skills</a>
+              <a href="projects.html"      class="profile-nav-link">Projects</a>
+              <a href="education.html"     class="profile-nav-link">Education</a>
+              <a href="certifications.html" class="profile-nav-link">Certs</a>
+              <a href="contact.html"       class="profile-nav-link">Contact</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 <span>SHABAN YUSSUF</span> — Built with HTML · CSS · JS — Deployed on <span>Vercel</span></p>
+  </footer>
+
+  <script>
+    // typing animation cycling through roles
+    const roles = [
+      'Frontend Developer',
+      'CS Undergraduate',
+      'Discord Bot Builder',
+      'Problem Solver',
+    ];
+
+    let ri = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typing-text');
+
+    function type() {
+      const word = roles[ri];
+      el.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
+
+      if (!deleting && ci === word.length) setTimeout(() => deleting = true, 1800);
+      if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+
+      setTimeout(type, deleting ? 40 : 80);
+    }
+
+    setTimeout(type, 700);
+  </script>
+
+  <script src="js/core.js"></script>
+</body>
+</html>
